@@ -20,4 +20,16 @@ Then run the following command from the repo's root folder:
 $ make deploy
 ```
 
-Your stack should be ready at this point, provided that the AWS credentials has the permissions to create the resources.
+Your stack should be ready at this point, provided that the AWS credentials has the permissions to create the resources. You can now run the example consumer for testing.
+```bash
+$ cd example-consumer/
+$ go build -v
+$ ./example-consumer
+```
+
+While the consumer is running, you can update your test table by inserting new items, modifying or removing existing items. The running consumer should print all event data.
+
+Finally, to cleanup the stack, run the following command from the repo's root folder:
+```bash
+$ make remove
+```
