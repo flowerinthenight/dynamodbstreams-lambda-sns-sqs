@@ -12,6 +12,8 @@ AWS_ACCESS_KEY_ID={key}
 AWS_SECRET_ACCESS_KEY={secret}
 ```
 
+Also, you need to create an S3 bucket named `lambda-deploy-development`.
+
 This example assumes that you will use an existing table. In my case, I used a test table named TESTSTREAM with dynamodbstreams enabled. View type is "New and old images". The streams' ARN is in the template (`EventSourceArn`) so you might want to update that part.
 
 Then run the following command from the repo's root folder:
