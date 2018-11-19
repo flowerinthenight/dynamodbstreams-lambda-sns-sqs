@@ -4,7 +4,7 @@ This is an example of tracking a dynamodb table's changes using [dynamodbstreams
 A cloudformation [template](https://github.com/flowerinthenight/dynamodbstreams-lambda-sns-sqs/blob/master/template/development.yml) is provided to create all the resources needed in this example. The [example-consumer](https://github.com/flowerinthenight/dynamodbstreams-lambda-sns-sqs/tree/master/example-consumer) will create the SQS queue that subscribes to the SNS topic upon execution, if needed. 
 
 ## How to run
-You need to have the following required environment variables.
+You need to have the following required environment variables:
 ```bash
 AWS_ACCT_ID={your-aws-account-id}
 AWS_REGION={your-aws-region}
