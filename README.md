@@ -31,5 +31,7 @@ While the consumer is running, you can update your test table by inserting new i
 
 Finally, to cleanup the stack, run the following command from the repo's root folder:
 ```bash
+# This command will delete the cloudformation stack. It will not delete the SQS queue
+# created by example-consumer so you need to delete that manually.
 $ make remove
 ```
