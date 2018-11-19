@@ -1,0 +1,54 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  test dynamodbstreams to lambda to sns to sqs
+
+Globals:
+  Function:
+    Timeout: 300
+    Runtime: go1.x
+
+Resources:
+  TestStreamsIamRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+            Action: "sts:AssumeRole"
+      ManagedPolicyArns:
+        - "arn:aws:iam::aws:policy/AmazonDynamoDBFullAccess"
+        - "arn:aws:iam::aws:policy/service-role/AWSLambdaDynamoDBExecutionRole"
+        - "arn:aws:iam::aws:policy/AmazonSNSFullAccess"
+  TestStreamsSnsTopic:
+    Type: AWS::SNS::Topic
+    Properties:
+      TopicName: "teststreams-dbstreams-snstopic"
+  TestStreams:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: ../workspace/
+      Handler: teststreams
+      Role:
+        Fn::GetAtt: [ TestStreamsIamRole, Arn ]
+      Environment:
+        Variables:
+          TOPIC_ARN: { "Fn::Sub": "arn:aws:sns:${AWS::Region}:${AWS::AccountId}:teststreams-dbstreams-snstopic" }
+  WaveReportStreamDbstreams:
+    Type: AWS::Lambda::EventSourceMapping
+    Properties:
+      Enabled: True
+      EventSourceArn: "arn:aws:dynamodb:ap-northeast-1:963826138034:table/TESTSTREAM/stream/2018-11-02T05:47:37.235"
+      FunctionName:
+        Fn::GetAtt: [ TestStreams, Arn ]
+      StartingPosition: LATEST
+Outputs:
+  TestStreams:
+    Description: "TestStreams Lambda ARN"
+    Value:
+      Fn::GetAtt: [ TestStreams, Arn ]
+    Export:
+      Name: TestStreamsLambdaARN
