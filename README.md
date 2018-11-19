@@ -13,5 +13,6 @@ AWS_SECRET_ACCESS_KEY={secret}
 
 Then run the following command:
 ```bash
+# Note that the GO111MODULE=on variable is enabled during the build.
 $ make deploy
 ```
