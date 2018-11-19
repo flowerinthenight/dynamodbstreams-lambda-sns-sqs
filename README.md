@@ -16,3 +16,5 @@ Then run the following command:
 # Note that the GO111MODULE=on variable is enabled during the build.
 $ make deploy
 ```
+
+Your stack should be ready at this point, provided that the AWS credentials has the permissions to create the resources.
