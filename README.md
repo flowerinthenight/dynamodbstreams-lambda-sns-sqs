@@ -20,7 +20,7 @@ Then run the following command from the repo's root folder:
 $ make deploy
 ```
 
-Your stack should be ready at this point, provided that the AWS credentials has the permissions to create the resources. You can now run the example consumer for testing.
+Your stack should be ready at this point, provided that the AWS credentials has the permission to create the resources. You can now run the example consumer for testing.
 ```bash
 $ cd example-consumer/
 $ go build -v
