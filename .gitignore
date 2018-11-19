@@ -12,3 +12,4 @@
 *.out
 
 workspace/
+example-consumer/example-consumer

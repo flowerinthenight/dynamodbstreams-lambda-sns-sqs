@@ -37,7 +37,7 @@ Resources:
       Environment:
         Variables:
           TOPIC_ARN: { "Fn::Sub": "arn:aws:sns:${AWS::Region}:${AWS::AccountId}:teststreams-dbstreams-snstopic" }
-  WaveReportStreamDbstreams:
+  TestStreamsDbstreams:
     Type: AWS::Lambda::EventSourceMapping
     Properties:
       Enabled: True
