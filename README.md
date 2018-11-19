@@ -12,6 +12,8 @@ AWS_ACCESS_KEY_ID={key}
 AWS_SECRET_ACCESS_KEY={secret}
 ```
 
+This example assumes that you will use an existing table. In this sample's case, I used a test table named TESTSTREAM with dynamodbstreams enabled. View type is "New and old images".
+
 Then run the following command:
 ```bash
 # Note that the GO111MODULE=on variable is enabled during the build.
