@@ -5,7 +5,7 @@ OUT_DIR     := workspace
 REGION      := $(AWS_REGION)
 
 build: clean
-	GO111MODULE=on GOFLAGS=-mod=vendor CGO_ENABLED=0 GOOS=linux go build -v -a -installsuffix cgo -o $(OUT_DIR)/teststreams
+	GO111MODULE=on CGO_ENABLED=0 GOOS=linux go build -v -a -installsuffix cgo -o $(OUT_DIR)/teststreams
 
 package: build
 	aws cloudformation package \
