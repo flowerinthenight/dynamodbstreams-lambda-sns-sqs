@@ -14,7 +14,7 @@ AWS_SECRET_ACCESS_KEY={secret}
 
 This example assumes that you will use an existing table. In my case, I used a test table named TESTSTREAM with dynamodbstreams enabled. View type is "New and old images". The streams' ARN is in the template (`EventSourceArn`) so you might want to update that part.
 
-Then run the following command:
+Then run the following command from the repo's root folder:
 ```bash
 # Note that the GO111MODULE=on variable is enabled during the build.
 $ make deploy
