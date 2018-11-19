@@ -12,7 +12,7 @@ AWS_ACCESS_KEY_ID={key}
 AWS_SECRET_ACCESS_KEY={secret}
 ```
 
-This example assumes that you will use an existing table. In my case, I used a test table named TESTSTREAM with dynamodbstreams enabled. View type is "New and old images". The streams' ARN is in the template so you might want to update that part.
+This example assumes that you will use an existing table. In my case, I used a test table named TESTSTREAM with dynamodbstreams enabled. View type is "New and old images". The streams' ARN is in the template (`EventSourceArn`) so you might want to update that part.
 
 Then run the following command:
 ```bash
