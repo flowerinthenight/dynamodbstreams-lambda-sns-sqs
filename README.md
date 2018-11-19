@@ -1,7 +1,7 @@
 ## Overview
 This is an example of tracking a dynamodb table's changes using [dynamodbstreams](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Streams.html). Table item updates will trigger a lambda function that will then forward the event payload to an SNS topic. An example SQS subscriber is also provided that will subscribe to the SNS topic and print all event data.
 
-A cloudformation [template](https://github.com/flowerinthenight/dynamodbstreams-lambda-sns-sqs/blob/master/template/development.yml) is provided to create all the resources needed in this example. The [example-consumer](https://github.com/flowerinthenight/dynamodbstreams-lambda-sns-sqs/tree/master/example-consumer) will create the SQS queue that subscribes to the SNS topic upon execution, if needed. The lambda code is in [main.go](https://github.com/flowerinthenight/dynamodbstreams-lambda-sns-sqs/blob/master/main.go).
+A cloudformation [template](https://github.com/flowerinthenight/dynamodbstreams-lambda-sns-sqs/blob/master/template/development.yml) is provided to create the resources needed in this example. The [example-consumer](https://github.com/flowerinthenight/dynamodbstreams-lambda-sns-sqs/tree/master/example-consumer) will create the SQS queue that subscribes to the SNS topic upon execution, if needed. The lambda code is in [main.go](https://github.com/flowerinthenight/dynamodbstreams-lambda-sns-sqs/blob/master/main.go).
 
 ## How to run
 You need to have the following required environment variables:
