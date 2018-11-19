@@ -6,6 +6,7 @@ A cloudformation [template](https://github.com/flowerinthenight/dynamodbstreams-
 ## How to run
 You need to have the following required environment variables.
 ```bash
+AWS_ACCT_ID={your-aws-account-id}
 AWS_REGION={your-aws-region}
 AWS_ACCESS_KEY_ID={key}
 AWS_SECRET_ACCESS_KEY={secret}
